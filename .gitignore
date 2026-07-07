@@ -1,0 +1,6 @@
+*courseContent
+
+.env
+*_venv
+__pycache__/
+*.pyc
