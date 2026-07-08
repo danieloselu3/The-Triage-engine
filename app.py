@@ -39,12 +39,12 @@ load_dotenv()
 # Config
 # ---------------------------------------------------------------------------
 
-CLOUD_MODEL = os.getenv("MODEL_NAME", "gpt-4o-mini")
-CLOUD_BASE_URL = os.getenv("MODEL_BASE_URL", "https://api.openai.com/v1")
+CLOUD_MODEL = os.getenv("MODEL_NAME")
+CLOUD_BASE_URL = os.getenv("MODEL_BASE_URL")
 CLOUD_API_KEY = os.getenv("OPENAI_API_KEY") or "sk-not-set"
 
-LOCAL_MODEL = os.getenv("LOCAL_MODEL_NAME", "llama3.2")
-LOCAL_BASE_URL = os.getenv("LOCAL_BASE_URL", "http://localhost:11434/v1")
+LOCAL_MODEL = os.getenv("LOCAL_MODEL_NAME")
+LOCAL_BASE_URL = os.getenv("LOCAL_BASE_URL")
 
 CLOUD_TIMEOUT = 4.0   # seconds - hard cap on cloud transit per project brief
 LOCAL_TIMEOUT = 60.0  # local CPU inference is slower; give it more room
