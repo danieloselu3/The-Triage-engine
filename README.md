@@ -122,7 +122,7 @@ Real numbers from `logs/run_log.jsonl` after the runs in `sample_outputs/`, via 
 
 Local inference is roughly **10-15x slower** than cloud on this machine (CPU-only Ollama). That gap is the real, practical cost of the offline fallback — acceptable for "the system doesn't freeze," not acceptable as a steady-state replacement for cloud at any meaningful patient volume.
 
-![latency logs](sample_outputs\image.png)
+![latency logs](image.png)
 
 **More important than the latency gap — a clinical quality gap:** on the exact preeclampsia case that GPT-4o-mini correctly flagged `is_critical_emergency: true` → `Emergency Medical Call Team`, the local `llama3.2` model flagged the *same* case `false` → `General Nurse Queue`, despite its own summary correctly naming the preeclampsia markers. This was reproduced across repeated runs (see `sample_outputs/03_cloud_fail_local_fallback.md`). The local fallback is a genuine engineering success for uptime — the app never crashes — but it is not a clinically equivalent substitute, and this prototype should not be read as proof that offline mode is safe for unattended critical-case triage.
 
