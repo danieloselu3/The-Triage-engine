@@ -2,6 +2,8 @@
 
 A working prototype of the AfyaPlus health assistant's triage pipeline. It takes an unstructured patient message, runs it through a guardrailed, Chain-of-Thought prompt on GPT-4o-mini, enforces a strict JSON output schema, and automatically falls back to a local Ollama model if the cloud API fails or times out — so the pipeline never crashes, even fully offline.
 
+**[Open the 5-minute business briefing deck](https://danieloselu3.github.io/The-Triage-engine/Presentation/afyaplus_triage_engine_briefing.html)** — live, interactive slides (use arrow keys or the on-screen controls to navigate).
+
 ## The business problem
 
 AfyaPlus's backend routing engine needs predictable, machine-readable triage decisions. Patients send messy, conversational, sometimes multilingual messages. Early testing surfaced three failure modes: models produce conversational fluff instead of structured output, they occasionally hallucinate clinical facts (naming diseases, suggesting treatments), and the pipeline has no plan for what happens when the network degrades. This prototype exists to prove those three failure modes can be engineered around with prompting, schema enforcement, and resilience patterns — before any real patient traffic touches it.
