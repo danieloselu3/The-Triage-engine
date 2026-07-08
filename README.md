@@ -124,6 +124,8 @@ Local inference is roughly **10-15x slower** than cloud on this machine (CPU-onl
 
 **More important than the latency gap — a clinical quality gap:** on the exact preeclampsia case that GPT-4o-mini correctly flagged `is_critical_emergency: true` → `Emergency Medical Call Team`, the local `llama3.2` model flagged the *same* case `false` → `General Nurse Queue`, despite its own summary correctly naming the preeclampsia markers. This was reproduced across repeated runs (see `sample_outputs/03_cloud_fail_local_fallback.md`). The local fallback is a genuine engineering success for uptime — the app never crashes — but it is not a clinically equivalent substitute, and this prototype should not be read as proof that offline mode is safe for unattended critical-case triage.
 
+![latency logs](sample_outputs\image.png)
+
 ## Sample outputs
 
 See `sample_outputs/` for four full transcripts:
